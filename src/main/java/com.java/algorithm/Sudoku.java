@@ -39,7 +39,6 @@ public class Sudoku {
                     backTRace(i, j + 1);
                     // 回溯的关键
                     matrix[i][j] = 0;
-                    int a = 0;
                 }
             }
         } else {
