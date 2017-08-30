@@ -8,7 +8,7 @@ import java.util.*;
 public class ArrayAndLinkList {
     public static final int N = 50000;
     public static List values;
-    static{
+    static {
         Integer vals[] = new Integer[N];
         Random r = new Random();
         for (int i = 0, currval = 0; i < N; i++) {
@@ -20,7 +20,7 @@ public class ArrayAndLinkList {
 
     static long timeList(List lst) {
         long start = System.currentTimeMillis();
-        for(int i=0;i<N;i++) {
+        for (int i = 0; i < N; i++) {
             int index = Collections.binarySearch(lst, values.get(i));
             if (index != i) {
                 System.out.println("***错误***");
@@ -31,6 +31,12 @@ public class ArrayAndLinkList {
     }
 
     public static void main(String[] args) {
+        ArrayList<String> re = new ArrayList<>(10);
+        re.add("1");
+        re.add("2");
+        String str = re.set(1, "3");
+        System.out.println(str);
+
         System.out.println("ArrayList消耗时间：" + timeList(new ArrayList(values)));
         System.out.println("LinkedList消耗时间：" + timeList(new LinkedList(values)));
     }
